@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>document</title>
+        <link rel="stylesheet" href="hello.css">
+    </head>
+    <body>
+        <h1 id="hello">hello</h1>
+        <h1 id="hi">JS</h1>
+        <h1 id="word">word</h1>
+        <div class="alert-box" id="alert">알림창임</div>
+        <button onclick="열기()">버튼</button>
+        <button onclick="닫기()">닫는 버튼</button>
+
+        <script>
+            document.getElementById('hello').innerHTML = "hi";
+            document.getElementById('hi').innerHTML = "hello";
+            document.getElementById('word').style.fontSize = '30px';
+
+            function 열기() {
+                document.getElementById('alert').style.display = 'block';
+            }
+
+            function 닫기() {
+                document.getElementById('alert').style.display = 'none';
+            }
+        </script>
+    </body>
+</html>
