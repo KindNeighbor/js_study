@@ -9,22 +9,36 @@
         <h1 id="hello">hello</h1>
         <h1 id="hi">JS</h1>
         <h1 id="word">word</h1>
-        <div class="alert-box" id="alert">알림창임</div>
-        <button onclick="열기()">버튼</button>
-        <button onclick="닫기()">닫는 버튼</button>
+        <div class="alert-box" id="alert">
+            <p id="msgBox">알림창임</p>
+            <button id="close">닫기</button>
+        </div>
+
+        <button id="idButton">아이디 버튼</button>
+        <button id="passwordButton">아이디 버튼</button>
 
         <script>
             document.getElementById('hello').innerHTML = "hi";
             document.getElementById('hi').innerHTML = "hello";
             document.getElementById('word').style.fontSize = '30px';
 
-            function 열기() {
-                document.getElementById('alert').style.display = 'block';
+            document.getElementById('close').addEventListener('click', function() {
+                document.getElementById('alert').style.display = 'none';
+            })
+
+            document.getElementById('idButton').addEventListener('click', function() {
+                알림창('msgBox', '아이디를 입력하세요', 'alert', 'block');
+            })
+
+            document.getElementById('passwordButton').addEventListener('click', function() {
+                알림창('msgBox', '비밀번호를 입력하세요', 'alert', 'block');
+            })
+
+            function 알림창(msgId, msg, paramId, data) {
+                document.getElementById(msgId).innerHTML = msg;
+                document.getElementById(paramId).style.display = data;
             }
 
-            function 닫기() {
-                document.getElementById('alert').style.display = 'none';
-            }
         </script>
     </body>
 </html>
