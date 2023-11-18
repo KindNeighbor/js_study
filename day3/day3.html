@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>과제</title>
+        <link ref="stylesheet" href="day3.css">
+    </head>
+    <body>
+        <div class="row">
+            <h1>1. 369게임</h1>
+        <div>
+            <input type="text" id="369number" placeholder="숫자를 입력하세요.">
+        </div>
+        <button id="checkButton">확인</button>
+        </div>
+
+        <div class="row">
+            <h1>2. 369 업그레이드</h1>
+            <div>
+                <input type="text" id="369upgrade" placeholder="숫자를 입력하세요.">
+            </div>
+            <button id="checkButton2">확인</button>
+        </div>
+
+        <div class="row">
+            <h1>3. 합격 확인</h1>
+            <div>
+                <input type="text" id="firstScore" placeholder="1과목 점수를 입력하세요."><br>
+                <input type="text" id="secondScore" placeholder="2과목 점수를 입력하세요.">
+            </div>
+            <button id="checkButton3">확인</button>
+        </div>
+
+
+        <script>
+            document.getElementById('checkButton').addEventListener('click', function() {
+                var number = document.getElementById('369number').value;
+                checkClap(number);
+            })
+            
+            document.getElementById('checkButton2').addEventListener('click', function() {
+                var number = document.getElementById('369upgrade').value;
+                checkUpgradeClap(number);
+            })
+            
+            document.getElementById('checkButton3').addEventListener('click', function() {
+                var score1 = document.getElementById('firstScore').value;
+                var score2 = document.getElementById('secondScore').value;
+                checkPassOrFail(score1, score2);
+            }) 
+            
+
+            function checkClap(number) {
+                if (number == '') {
+                    alert("숫자 입력 안허냐?!?!?!");
+                } else if (number % 3 == 0) {
+                    alert("박수쳐!!!!");
+                } else {
+                    alert("치지마!!!");
+                }
+            }
+
+            function checkUpgradeClap(number) {
+                if (number == '') {
+                    alert("숫자 입력 안허냐?!?!?!");
+                } else if (number % 3 == 0) {
+                    if (number % 9 == 0) {
+                        alert("두번 쳐야 돼!!!!!!!!!!!!!");
+                    } else {
+                        alert("한번만 쳐!");
+                    }
+                } else {
+                    alert("치지마!!!");
+                }
+            }
+
+            function checkPassOrFail(score1, score2) {
+                if (score1 == '' || score2 == '') {
+                    alert("숫자 입력 안허냐?!?!?!");
+                } else if (score1 < 0 || score1 > 100 || score2 < 0 || score2 > 100) {
+                    alert("장난치지 마셈 ㅡㅡ")
+                } else if (score1 < 40 || score2 < 40) {
+                    alert("내년에 다시보셈.......");
+                } else {
+                    if (score1 + score2 >= 120) {
+                        alert("합격");
+                    } else {
+                        alert("탈락!");
+                    }
+                }
+            }
+
+        </script>
+    </body>
+</html>
