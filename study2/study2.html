@@ -26,11 +26,19 @@
 
         <script>
             $('form').on('submit', function(e) {
-                if (document.getElementById('email').value == '') {
+                var id = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+                if (id == '') {
                     alert('아이디를 입력하세요.')
                     e.preventDefault();
-                } else if (document.getElementById('password').value == '') {
+                } else if (password == '') {
                     alert('비밀번호를 입력하세요.')
+                    e.preventDefault();
+                } else if (!/^\S+@\S+.\S+$/.test(id)) {
+                    alert('이메일 형식이 아닙니다.')
+                    e.preventDefault();
+                } else if (!/(?=.*[A-Z]).+/.test(password)) {
+                    alert('비밀번호에 적어도 대문자 1개이상 넣어주세요.');
                     e.preventDefault();
                 }
             })
