@@ -6,7 +6,7 @@
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         
     </head>
-    <body>
+    <body class="dark">
 
         <div class="black-bg">
             <div class="white-bg">
@@ -39,6 +39,7 @@
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
               <span class="navbar-brand">Navbar</span>
+              <span class="badge bg-dark">Dark 🔄</span>
               <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -71,6 +72,21 @@
             $('#close').on('click', function(){
                 $('.black-bg').removeClass('show-modal');
             });
+
+            var cnt = 0;
+
+            $('.badge').on('click', function() {
+                cnt += 1;
+                if (cnt % 2 == 0) {
+                    $('.dark').addClass('dark-mode');
+                    $('.navbar').removeClass('navbar-light bg-light').addClass('navbar-dark bg-dark');
+                    $('.badge').html('Light 🔄');
+                } else {
+                    $('.dark').removeClass('dark-mode');
+                    $('.navbar').removeClass('navbar-dark bg-dark').addClass('navbar-light bg-light');
+                    $('.badge').html('Dark 🔄');
+                }
+            })
             
 
         </script>

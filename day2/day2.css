@@ -26,3 +26,8 @@
     visibility : visible;
     opacity : 1;
 }
+
+.dark-mode {
+  background: black;
+  color: white;
+}
