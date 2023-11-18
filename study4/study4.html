@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>study4</title>
+    </head>
+    <body>
+        <p>임진왜란이 발발한 년도는?</p>
+        <input type="text" id="answer">
+        <button id="send-answer">제출</button>
+
+        <script>
+            var age = 29;
+            const birthPlace = '서울특별시';
+
+            console.log(age);
+            console.log(birthPlace);
+            
+            var name = 'park';
+            var id = 0;
+
+            function showName() {
+                var name = 'kim';
+                var id = 1;
+                console.log(name);
+            }
+
+            showName();
+            console.log('id 값은? ' + id);
+
+            var 예금액 = 60000;
+            var 미래예금액 = 0;
+
+            function calMoney(money, year) {
+                for (var i = 0; i < year; i++) {
+                    if (money < 50000) {
+                        money *= 1.15;
+                    } else if (money >= 50000) {
+                        money *= 1.20;
+                    }
+                }
+                return money;
+            }
+
+            미래예금액 = calMoney(예금액, 2);
+
+            console.log(미래예금액);
+
+            var fisrtCoffie = 360;
+
+            function reFill(num) {
+                var quantity = (num * 2) / 3;
+                num += quantity
+                quantity = (quantity * 2) / 3
+                num += quantity
+                return num;
+            }
+
+            var lastCoffie = reFill(fisrtCoffie);
+
+            console.log(lastCoffie);
+            
+            var cnt = 1;
+            document.getElementById('send-answer').addEventListener('click', function() {
+                var ans = document.getElementById('answer').value;
+                if (ans == 1592) {
+                    alert('정답!');
+                } else if (cnt < 3) {
+                    alert('다시 해보시오.')
+                    cnt++;
+                } else {
+                    alert('넌 공부하지 마라')
+                }
+            })
+
+
+        </script>
+    </body>
+</html>
