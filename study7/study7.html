@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            function sol(a, b, c) {
+                console.log(a + b + c);
+            }
+
+            var array1 = [1, 2, 3]
+            sol(...array1);
+
+            function add(a, b = time(a)) {
+                console.log(a+b);
+            }
+
+            function time(b) {
+                return b * b;
+            }
+
+            add(4);
+
+            function sol2(a, b, c) {
+                console.log(arguments);
+            }
+
+            function sol3(a, b, c) {
+                console.log(arguments[0]);
+                console.log(arguments[1]);
+                console.log(arguments[2]);
+            }
+
+            function sol4(a, b, c) {
+                for (let i = 0; i <arguments.length; i++) {
+                    console.log(arguments[i]);
+                }
+            }
+
+            sol2(...array1);
+
+            sol3(...array1);
+
+            sol4(...array1);
+        </script>
+    </body>
+</html>
