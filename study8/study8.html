@@ -139,6 +139,45 @@
             console.log(person3.info);
             person3.info = { name: '김', age: 20 };
             console.log(person3.info);  // { name: '김', age: 20 }
+
+            async function func1() {
+                var promise = new Promise((resolve, reject) => {
+                    var a = 2 + 2;
+                    resolve(a);
+                });
+
+                promise.then(function(a) {
+                    console.log(a);
+                });
+            }
+
+            func1();
+
+            async function func2() {
+                var promise = new Promise((resolve, reject) => {
+                    var a = 1 + 1;
+                    resolve(a);
+                });
+                var result = await promise;
+                console.log(result);
+            }
+
+            func2();
+
+            async function func3() {
+                var promise = new Promise((resolve, reject) => {
+                    var a = 1 + 1;
+                    resolve(a);
+                });
+                try {
+                    var result = await promise;
+                    console.log(result);
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+
+            func3();
         </script>
     </body>
 </html>
