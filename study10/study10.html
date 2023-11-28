@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <custom-input name="아이디"></custom-input><br>
+        <custom-input name="비번"></custom-input>
+
+        <script>
+
+            class 클래스 extends HTMLElement {
+                connectedCallback() {
+                    let name = this.getAttribute('name');
+                    this.innerHTML = `<label>${name} 인풋</label><br><input>`;
+                }
+                static get observedAttributes() {
+                    return ['name'];
+                }
+                attributeChangedCallback() {
+                    console.log(this.getAttribute('name'));
+                }
+            }
+
+            customElements.define('custom-input', 클래스);
+
+            var user;
+            console.log(user);
+            console.log(user ?? '로딩중')
+        </script>
+    </body>
+</html>
