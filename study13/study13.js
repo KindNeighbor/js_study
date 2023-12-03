@@ -39,21 +39,26 @@ $.get('https://codingapple1.github.io/hello.txt')
     $('.row').append(템플릿)
 });
 
+let cnt = 1;
+
 $('#more').click(function(){
-  $('#more').css("display", 'none');
-  $.get('https://codingapple1.github.io/js/more1.json')
-    .done((data)=>{
-      
-      data.forEach((a, i)=>{
-        var 템플릿 = 
+  const url = `https://codingapple1.github.io/js/more${cnt}.json`;
+  $.get(url)
+  .done((data)=>{      
+    data.forEach((a, i)=>{
+      var 템플릿 = 
         `<div class="col-sm-4">
-          <img src="https://via.placeholder.com/600" class="w-100">
-          <h5>${data[i].title}</h5>
-          <p>가격 : ${data[i].price}</p>
+        <img src="https://via.placeholder.com/600" class="w-100">
+        <h5>${data[i].title}</h5>
+        <p>가격 : ${data[i].price}</p>
         </div>`;
         $('.row').append(템플릿)
-      })
-      
+      })  
     });
+  if (cnt == 2) {
+    $('#more').css("display", 'none');
+  } else {
+    cnt++;
+  }
 });
 
