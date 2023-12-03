@@ -40,6 +40,7 @@ $.get('https://codingapple1.github.io/hello.txt')
 });
 
 $('#more').click(function(){
+  $('#more').css("display", 'none');
   $.get('https://codingapple1.github.io/js/more1.json')
     .done((data)=>{
       
