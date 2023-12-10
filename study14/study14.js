@@ -60,3 +60,30 @@ console.log(content2);
 
 
 $('#first').replaceWith('<div id="third">세 번째 div</div>');
+
+let map = new Map();
+
+map.set('name', 'John');
+map.set('age', 20);
+
+console.log(map.get('name')); // John
+console.log(map.get('age')); // 20
+console.log(map);
+
+let set = new Set();
+
+set.add('John');
+set.add('Jane');
+set.add('Tom');
+
+console.log(set.has('John'));  // true
+console.log(set.has('Jane'));  // true
+console.log(set.has('Smith')); // false
+console.log(set);
+
+let weakSet = new WeakSet();
+let obj = {name : "kim"};
+
+weakSet.add(obj);
+
+console.log(weakSet.has(obj)); // true
