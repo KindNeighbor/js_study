@@ -87,3 +87,9 @@ let obj = {name : "kim"};
 weakSet.add(obj);
 
 console.log(weakSet.has(obj)); // true
+
+$('.btn').click(function() {
+    console.log(this);  
+    console.log($(this));
+    console.log($(this)[0]); 
+});
